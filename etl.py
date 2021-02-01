@@ -104,4 +104,4 @@ if __name__ == '__main__':
     # First 1m ETL
     start = datetime(2020, 2, 1)
     end = datetime(2021, 1, 28)
-    etl('1m', end_date=end, start_date=start, mode='mmannual')
+    etl('1m', end_date=end, start_date=start, mode='mannual')
