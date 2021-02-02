@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import pandas as pd
 from utils.db import Database
+from utils.config import tab_names
 
 
 def timeframe_gen(start, end, inc, tz):
@@ -27,12 +28,12 @@ def convert_from_sec(s):
     return res
 
 
-def next_start_dates(tab_name, conn_str):
+def next_start_dates(interval, conn_str):
     with Database(conn_str) as conn:
         sql = '''
         SELECT symbol, MAX(date_int_key) AS recent_date from {}
         GROUP BY symbol
-        '''.format(tab_name)
+        '''.format(tab_names[interval])
         recent_dates_df = pd.read_sql(sql, conn.connector)
 
     recent_dates_df['recent_date'] = recent_dates_df['recent_date'].apply(

@@ -13,6 +13,12 @@ cred_info = {
     'personal_tel': os.environ['personal_tel']
 }
 
+# intraday candles download lim
+intra_lim = 30
+
+# api limit status code
+api_lim_code = 429
+
 tz_info = {'1m': None, '1d': utc}
 
 resol = {'1m': 1, '1d': 'D'}
@@ -31,14 +37,15 @@ col_names = {
 }
 
 msg_info = {
-    'tmp': '{}\n\nHi Andy,\n\n{}\n\nBest regards,\nRobot',
-    'comp': '''
+    'tmp':
+    '{}\n\nHi Andy,\n\n{}\n\nBest regards,\nRobot',
+    'comp':
+    '''
     The ETL for {} is completed\n
     Time Period: {} to {}\n
     Time Spent: {}\n
     Records Added: {}\n
-    ''',
-    'fail': 'Failed to download {} symbols below:\n{}'
+    '''
 }
 
 # logging
