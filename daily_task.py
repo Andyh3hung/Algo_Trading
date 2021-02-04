@@ -22,3 +22,4 @@ notification(
              '''.format(now.strftime('%Y-%m-%d %H:%M:%S')))
 
 etl('1m', today)
+

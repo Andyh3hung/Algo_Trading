@@ -63,7 +63,6 @@ if __name__ == '__main__':
             low_price numeric,
             volume numeric
             );
-
         CREATE TABLE IF NOT EXISTS us_equity_1m_finn(
             _id SERIAL UNIQUE,
             symbol varchar(25) NOT NULL,
@@ -80,8 +79,9 @@ if __name__ == '__main__':
     start_date = datetime(2020, 2, 4)
     end_date = datetime(2021, 1, 29)
     etl('1m', end_date, start_date, mode='mannual')
-
+    
     # First Daily ETL
     start_date = datetime(2001, 2, 4)
     end_date = datetime(2021, 1, 29)
     etl('1d', end_date, start_date, mode='mannual')
+    
