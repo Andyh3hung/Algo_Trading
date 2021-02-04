@@ -60,8 +60,6 @@ def single_etl(symbol, interval, start_date, end_date, client, conn_str,
                             conn.load_to_RDS(store_file, tab_names[interval],
                                              col_names[interval])
                         print('uploaded')
-                    else:
-                        print('waiting')
                 else:
                     log.warning(
                         'ETL for {} is interrupted by FinnhubAPIException code:{}'
